@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout  xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="categoryDetailViewModel"
+            type="com.tefanhaetami.poslite.screens.category.CategoryDetailViewModel" />
+
+        <variable
+            name="category"
+            type="com.tefanhaetami.poslite.database.iface.Category" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        style="@style/PageContentText"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".screens.category.CategoryDetailFragment">
+
+        <TextView
+            android:id="@+id/title_text"
+            style="@style/PageContentText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Title"
+            android:text="@{category.title}"/>
+
+        <TextView
+            android:id="@+id/description_text"
+            style="@style/PageContentText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textAlignment="textStart"
+            app:layout_constraintEnd_toEndOf="@+id/title_text"
+            app:layout_constraintStart_toStartOf="@+id/title_text"
+            app:layout_constraintTop_toBottomOf="@+id/title_text"
+            tools:text="@string/lorem_ipsum"
+            android:text="@{category.description}"/>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <Button
+                android:id="@+id/edit_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_weight="1"
+                android:text="@string/edit"
+                app:backgroundTint="@color/colorSecondaryVariant"
+                android:onClick="@{() -> categoryDetailViewModel.startNavigateToEdit(category.id)}"/>
+
+            <Button
+                android:id="@+id/delete_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_weight="1"
+                android:text="@string/delete"
+                android:textColor="@android:color/white"
+                app:backgroundTint="@color/colorError" />
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

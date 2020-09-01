@@ -1,0 +1,31 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryVariant">@color/colorPrimaryVariant</item>
+        <item name="colorOnPrimary">@color/colorOnPrimary</item>
+        <item name="colorSecondary">@color/colorSecondary</item>
+        <item name="colorSecondaryVariant">@color/colorSecondaryVariant</item>
+        <item name="colorOnSecondary">@color/colorOnSecondary</item>
+        <item name="colorError">@color/colorError</item>
+        <item name="colorOnError">@color/colorOnError</item>
+        <item name="colorSurface">@color/colorSurface</item>
+        <item name="colorOnSurface">@color/colorOnSurface</item>
+        <item name="android:colorBackground">@color/background</item>
+        <item name="colorOnBackground">@color/colorOnBackground</item>
+    </style>
+    <style name="BaseText">
+        <item name="android:textColor">@color/colorOnBackground</item>
+        <item name="android:fontFamily">@font/roboto</item>
+    </style>
+    <style name="PageTitleText" parent="BaseText">
+        <item name="android:textSize">22dp</item>
+        <item name="android:textAlignment">center</item>
+    </style>
+
+    <style name="PageContentText" parent="BaseText">
+        <item name="android:textSize">18dp</item>
+        <item name="android:textAlignment">textStart</item>
+    </style>
+</resources>

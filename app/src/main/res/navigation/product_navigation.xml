@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/product_navigation"
+    app:startDestination="@id/productFragment">
+
+    <fragment
+        android:id="@+id/productFragment"
+        android:name="com.tefanhaetami.poslite.screens.product.ProductFragment"
+        android:label="fragment_product"
+        tools:layout="@layout/fragment_product" >
+        <action
+            android:id="@+id/action_productFragment_to_productCreateFragment"
+            app:destination="@id/productCreateFragment" />
+        <action
+            android:id="@+id/action_productFragment_to_productDetailFragment"
+            app:destination="@id/productDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/productCreateFragment"
+        android:name="com.tefanhaetami.poslite.screens.product.ProductCreateFragment"
+        android:label="fragment_product_create"
+        tools:layout="@layout/fragment_product_create" >
+        <action
+            android:id="@+id/action_productCreateFragment_to_productFragment"
+            app:destination="@id/productFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/productDetailFragment"
+        android:name="com.tefanhaetami.poslite.screens.product.ProductDetailFragment"
+        android:label="fragment_product_detail"
+        tools:layout="@layout/fragment_product_detail" >
+        <action
+            android:id="@+id/action_productDetailFragment_to_productFragment"
+            app:destination="@id/productFragment" />
+        <action
+            android:id="@+id/action_productDetailFragment_to_productEditFragment"
+            app:destination="@id/productEditFragment" />
+        <argument
+            android:name="id"
+            app:argType="long" />
+    </fragment>
+    <fragment
+        android:id="@+id/productEditFragment"
+        android:name="com.tefanhaetami.poslite.screens.product.ProductEditFragment"
+        android:label="fragment_product_edit"
+        tools:layout="@layout/fragment_product_edit" >
+        <action
+            android:id="@+id/action_productEditFragment_to_productDetailFragment"
+            app:destination="@id/productDetailFragment" />
+        <argument
+            android:name="id"
+            app:argType="long" />
+    </fragment>
+</navigation>

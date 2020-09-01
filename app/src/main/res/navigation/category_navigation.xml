@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/category_navigation"
+    app:startDestination="@id/categoryFragment">
+
+    <fragment
+        android:id="@+id/createCategoryFragment"
+        android:name="com.tefanhaetami.poslite.screens.category.CategoryCreateFragment"
+        android:label="@string/create_category">
+        <action
+            android:id="@+id/action_createCategoryFragment_to_categoryFragment"
+            app:destination="@id/categoryFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/categoryFragment"
+        android:name="com.tefanhaetami.poslite.screens.category.CategoryFragment"
+        android:label="@string/categories"
+        tools:layout="@layout/fragment_category">
+        <action
+            android:id="@+id/action_categoryFragment_to_createCategoryFragment"
+            app:destination="@id/createCategoryFragment" />
+        <action
+            android:id="@+id/action_categoryFragment_to_categoryDetailFragment"
+            app:destination="@id/categoryDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/categoryDetailFragment"
+        android:name="com.tefanhaetami.poslite.screens.category.CategoryDetailFragment"
+        android:label="@string/category">
+        <action
+            android:id="@+id/action_categoryDetailFragment_to_categoryFragment"
+            app:destination="@id/categoryFragment" />
+        <argument
+            android:name="id"
+            app:argType="long" />
+        <action
+            android:id="@+id/action_categoryDetailFragment_to_editCategoryFragment"
+            app:destination="@id/editCategoryFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/editCategoryFragment"
+        android:name="com.tefanhaetami.poslite.screens.category.CategoryEditFragment"
+        android:label="@string/update_category">
+        <argument
+            android:name="id"
+            app:argType="long" />
+        <action
+            android:id="@+id/action_editCategoryFragment_to_categoryDetailFragment"
+            app:destination="@id/categoryDetailFragment" />
+    </fragment>
+</navigation>
